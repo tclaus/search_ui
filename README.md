@@ -1,24 +1,39 @@
-# README
+## Search UI
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the Search UI written in Ruby On Rails for the [Web-Crawler](https://github.com/tclaus/web_crawler)Project.
 
-Things you may want to cover:
+### Install Ruby Dependencies
 
-* Ruby version
+To install Ruby and Rails I recommend (On a Mac) [rvm](https://rvm.io) the ruby version manager.
+Install it, Install Ruby 2.5.x.
 
-* System dependencies
+Switch to the search ui folder and run bundle install to install all ruby dependencies.
 
-* Configuration
+After you have setup the crawler and a local elastic search index, start with
+```sh
+$ rails g
+```
 
-* Database creation
+Now open http://localhost:3000
 
-* Database initialization
+You now have setup your own web crawler and search ui.
+But don't expect to have now a google competitor.
 
-* How to run the test suite
+There is much more to consider:
 
-* Services (job queues, cache servers, search engines, etc.)
+- Think about rankings. what if your enter 'iphone' - what is the most interesting site?
+- Think about spam, low quality sites, ads, these are not what you might expect.
+- For internal use on a restricted amount of sites this might be OK.
 
-* Deployment instructions
+### TODO / How To Help
 
-* ...
+- Write an issue
+- Clone this repo, improve it
+- If you can, add tests
+- Make a pull request
+
+
+### License
+MIT
+
+Written by Thorsten Claus, Dortmund, Germany
