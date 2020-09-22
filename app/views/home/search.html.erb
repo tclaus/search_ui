@@ -2,18 +2,25 @@
 
 <div class="results">
 <%= form_tag(search_path, method: :get) do %>
-  <%= text_field_tag :term %>
+  <%= text_field_tag :term, params[:term] %>
   <%= submit_tag 'Search', class:"w3-button w3-black w3-padding-large w3-large w3-margin-top" %>
 <% end %>
 
 <hr>
-Found: <%= @totalHits %> entries
+Found: <%= @total_hits %> entries
 <% @page_results.each do |target| %>
   <div class="card" style="width: 60rem;">
     <div class="card-body">
-      <h5 class="card-title"><%= target["_source"]["title"] %></h5>
-      <h6 class="card-subtitle mb-2 text-muted"><a href=<%= target["_source"]["url"] %> class="card-link"><%= target["_source"]["url"] %></a></h6>
-      <p class="card-text"><%= target["_source"]["description"] %></p>
+      <h5 class="card-title">
+        <a href=<%= target["_source"]["url"] %> >
+          <%= target["_source"]["title"] %>
+        </a>
+      </h5>
+      <h6 class="card-subtitle mb-2 text-muted">
+        <a href=<%= target["_source"]["url"] %> class="card-link"><%= target["_source"]["url"] %>
+        </a>
+      </h6>
+      <span class="card-text"><%= target["_source"]["description"] %></span>
     </div>
   </div>
 <% end %>
