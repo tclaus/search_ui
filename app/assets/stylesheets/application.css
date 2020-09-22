@@ -25,12 +25,15 @@
 
 .card-title {
   color:#00278e;
+  font-size: 18px;
 }
 
 .card-body {
   color: #494949;
+  font-size: 10px;
 }
 
 .card-link {
   color:#20692b;
+  font-size: 12px;
 }
